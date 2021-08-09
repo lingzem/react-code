@@ -6,10 +6,16 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "babel-plugin-transform-flow-comments": "^6.22.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "react": "link:../github_react/packages/react/",
+    "react-dom": "link:../github_react/packages/react-dom/",
+    "shared": "link:../github_react/packages/shared/",
+    "events": "link:../github_react/packages/events/",
+    "react-reconciler": "link:../github_react/packages/react-reconciler/",
+    "react-scheduler": "link:../github_react/packages/react-scheduler/",
+    "react-is": "link:../github_react/packages/react-is/"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.1.8"
   }
 }
