@@ -15,10 +15,10 @@ process.on("unhandledRejection", (err) => {
 require("../config/env");
 
 const fs = require("fs");
-const chalk = require("react-dev-utils/chalk");
+// const chalk = require("react-dev-utils/chalk");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
-const clearConsole = require("react-dev-utils/clearConsole");
+// const clearConsole = require("react-dev-utils/clearConsole");
 const checkRequiredFiles = require("react-dev-utils/checkRequiredFiles");
 const {
   choosePort,
@@ -47,22 +47,22 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 
-if (process.env.HOST) {
-  console.log(
-    chalk.cyan(
-      `Attempting to bind to HOST environment variable: ${chalk.yellow(
-        chalk.bold(process.env.HOST)
-      )}`
-    )
-  );
-  console.log(
-    `If this was unintentional, check that you haven't mistakenly set it in your shell.`
-  );
-  console.log(
-    `Learn more here: ${chalk.yellow("https://cra.link/advanced-config")}`
-  );
-  console.log();
-}
+// if (process.env.HOST) {
+//   console.log(
+//     chalk.cyan(
+//       `Attempting to bind to HOST environment variable: ${chalk.yellow(
+//         chalk.bold(process.env.HOST)
+//       )}`
+//     )
+//   );
+//   console.log(
+//     `If this was unintentional, check that you haven't mistakenly set it in your shell.`
+//   );
+//   console.log(
+//     `Learn more here: ${chalk.yellow("https://cra.link/advanced-config")}`
+//   );
+//   console.log();
+// }
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
@@ -126,9 +126,9 @@ checkBrowsers(paths.appPath, isInteractive)
       if (err) {
         return console.log(err);
       }
-      if (isInteractive) {
-        clearConsole();
-      }
+      // if (isInteractive) {
+      //   clearConsole();
+      // }
 
       /*
       if (env.raw.FAST_REFRESH && semver.lt(react.version, "16.10.0")) {
@@ -140,7 +140,7 @@ checkBrowsers(paths.appPath, isInteractive)
       }
       */
 
-      console.log(chalk.cyan("Starting the development server...\n"));
+      // console.log(chalk.cyan("Starting the development server...\n"));
       openBrowser(urls.localUrlForBrowser);
     });
 

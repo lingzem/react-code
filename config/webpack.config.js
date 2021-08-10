@@ -397,10 +397,7 @@ module.exports = function (webpackEnv) {
 
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: [
-                paths.appSrc,
-                path.resolve(__dirname, "../github_react"),
-              ],
+              include: paths.appSrc,
               loader: require.resolve("babel-loader"),
               options: {
                 customize: require.resolve(
@@ -439,6 +436,18 @@ module.exports = function (webpackEnv) {
                 // See #6846 for context on why cacheCompression is disabled
                 cacheCompression: false,
                 compact: isEnvProduction,
+              },
+            },
+            {
+              test: /\.(js|mjs|jsx|ts|tsx)$/,
+              include: path.resolve(__dirname, "../github_react"),
+              loader: require.resolve("babel-loader"),
+              options: {
+                plugins: [
+                  [require.resolve("@babel/plugin-transform-flow-strip-types")],
+                ].filter(Boolean),
+
+                cacheDirectory: true,
               },
             },
             // Process any JS outside of the app with Babel.
